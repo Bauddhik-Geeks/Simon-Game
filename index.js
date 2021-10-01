@@ -2,13 +2,14 @@ var gamePattern=[];
 var userClickedPattern=[];
 var buttonColours=["red","blue","green","yellow"];
 
-var level=0;
+var level = 0;
 var started=false;
 
 $(document).keypress(function() {
-  if (!started) {
 
-     // The h1 title starts out saying "Press A Key to Start", when the game has started, change this to say "Level 0".
+  if (!started) {
+     level--; // fixes level display on game start //
+     
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
