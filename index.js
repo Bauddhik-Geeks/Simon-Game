@@ -9,7 +9,7 @@ $(document).keypress(function() {
 
   if (!started) {
      level--; // fixes level display on game start //
-     
+    toggleTurn(false);
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
@@ -25,6 +25,7 @@ $(".btn").click(function() {
   animatePress(userChosenColour);
 
   checkAnswer(userClickedPattern.length-1);
+  toggleTurn(false);
 });
 
 
@@ -41,7 +42,6 @@ function checkAnswer(currentLevel) {
       playSound("wrong");
       $("body").addClass("game-over");
       $("#level-title").text("Game Over, Press Any Key to Restart");
-
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
@@ -61,6 +61,7 @@ function nextSequence() {
 
   $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
   playSound(randomChosenColour);
+  toggleTurn()
 }
 
 function animatePress(currentColor) {
@@ -79,4 +80,13 @@ function startOver() {
   level = 0;
   gamePattern = [];
   started = false;
+  $('#turn-indicator').hide();
+}
+
+function toggleTurn(player = true) {
+  let text="Memorize the pattern";
+  if (player) {
+     text = "Your turn";
+  }
+  $("#turn-indicator").text(text);
 }
