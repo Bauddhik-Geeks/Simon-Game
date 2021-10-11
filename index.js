@@ -4,6 +4,7 @@ var buttonColours=["red","blue","green","yellow"];
 
 var level = 0;
 var started=false;
+let score = 0;
 
 $(document).keypress(function() {
 
@@ -38,14 +39,17 @@ function checkAnswer(currentLevel) {
           nextSequence();
         }, 1000);
       }
+      score = score + 1;
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      
+      $("#level-title").text(`Your Score : ${score} (Press Any Key To Restart)`)
+      score = 0;
       setTimeout(function () {
         $("body").removeClass("game-over");
       }, 200);
-
+      
       startOver();
     }
 }
