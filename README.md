@@ -1,6 +1,6 @@
 # Simon-Game
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -83,6 +83,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://linktr.ee/Vishal_D_A"><img src="https://avatars.githubusercontent.com/u/67089703?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vishal D A</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=vishalda" title="Code">💻</a></td>
     <td align="center"><a href="https://avinash-tiwari.github.io/"><img src="https://avatars.githubusercontent.com/u/25238266?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Avinash Tiwari</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=avinash-tiwari" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/fenil3357"><img src="https://avatars.githubusercontent.com/u/78013068?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fenil Rami</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=fenil3357" title="Code">💻</a></td>
   </tr>
 </table>
 
