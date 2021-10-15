@@ -1,93 +1,110 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
-  text-align: center;
-  background-color: #011F3F;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(126deg, #6441A5, #2a0845);
 }
 
-h5 {
- font-family: 'Press Start 2P', cursive;
- color: yellow
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: yellow;
+    text-align: center;
+    line-height: 2;
 }
 
-#level-title, #turn-indicator {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
-  margin:  2%;
-  margin-top: 80px;
-  color: #FEF2BF;
+#level-title,
+#turn-indicator {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin-top: 2em;
+    color: #FEF2BF;
+    text-align: center;
+    line-height: 2;
 }
 
 .container {
-  display: block;
-  width: 50%;
-  margin: auto;
-
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  border: 10px solid black;
-  border-radius: 20%;
+    margin: 20px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    border: 5px solid black;
+    border-radius: 40%;
+    cursor: pointer;
 }
 
 .game-over {
-  background-color: red;
-  opacity: 0.8;
+    background-color: red;
+    opacity: 0.8;
 }
 
 .red {
-  background-color: red;
+    background-color: red;
 }
 
 .green {
-  background-color: green;
+    background-color: green;
 }
 
 .blue {
-  background-color: blue;
+    background-color: blue;
 }
 
 .yellow {
-  background-color: yellow;
+    background-color: yellow;
 }
 
 .pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+    box-shadow: 0 0 20px -5px white;
+    background-color: grey;
+    animation: shakenow 0.2s linear infinite;
 }
 
-.hide{
-  visibility: hidden;
+@keyframes shakenow {
+    0% {
+        transform: translateX(0px);
+    }
+    25% {
+        transform: translateX(-5px) translateY(-5px);
+    }
+    50% {
+        transform: translateX(0px) translateY(0px);
+    }
+    75% {
+        transform: translateX(-5px) translateY(5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
 
-#content{
-  margin-left: 10%;
-  margin-right: 10%;
+.hide {
+    visibility: hidden;
 }
 
-@media (orientation: portrait){
+#content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
 
-  h1{
-    margin-bottom: -20px;
-  }
-
-  #content{
-    height: 1000px;
-    margin-top: 28%;
-    margin-left: -4%;
-    margin-right: -1%;
-  }
-  .btn{
-    width: 120px;
-    height: 160px;
-    margin-top: -45px;
-    margin-bottom: 80px;
-    margin-left: -15px;
-    margin-right: 6px;
-  }
-  .container{
-    font-size:260px;
-  }
+@media screen and (max-width: 350px) {
+    h1 {
+        font-size: 30px;
+    }
+    .btn {
+        margin: 10px;
+        height: 80px;
+        width: 80px;
+    }
 }
