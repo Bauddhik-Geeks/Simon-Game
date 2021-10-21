@@ -130,7 +130,7 @@ h1 {
     width: 25px;
     height: 25px;
     background: rgba(255, 255, 255, 0.2);
-    animation: animate 20s linear infinite;
+    animation: animate 0.8s linear infinite;
     bottom: -150px;
 }
 
@@ -138,7 +138,7 @@ h1 {
     left: 86%;
     width: 80px;
     height: 80px;
-    animation-delay: 0s;
+    animation: 0.2s;
 }
 
 .box-area li:nth-child(2) {
@@ -146,14 +146,17 @@ h1 {
     width: 30px;
     height: 30px;
     animation-delay: 1.5s;
-    animation-duration: 10s;
+    /* animation-duration: 10s;
+     */
+    animation: animate 0.8s linear infinite;
 }
 
 .box-area li:nth-child(3) {
     left: 70%;
     width: 100px;
     height: 100px;
-    animation-delay: 5.5s;
+    /* animation-delay: 5.5s; */
+    animation: animate 0.8s linear infinite;
 }
 
 .box-area li:nth-child(4) {
@@ -161,7 +164,8 @@ h1 {
     width: 150px;
     height: 150px;
     animation-delay: 0s;
-    animation-duration: 15s;
+    /* animation-duration: 15s; */
+    animation: animate 0.8s linear infinite;
 }
 
 .box-area li:nth-child(5) {
