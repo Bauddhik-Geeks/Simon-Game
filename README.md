@@ -1,6 +1,6 @@
 # Simon-Game
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -85,6 +85,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://avinash-tiwari.github.io/"><img src="https://avatars.githubusercontent.com/u/25238266?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Avinash Tiwari</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=avinash-tiwari" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/fenil3357"><img src="https://avatars.githubusercontent.com/u/78013068?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Fenil Rami</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=fenil3357" title="Code">💻</a></td>
     <td align="center"><a href="https://www.vgetfresh.com/blog"><img src="https://avatars.githubusercontent.com/u/70860738?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Raja Harsh Vardhan Singh</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=rhvsingh" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/siddhiiguptaa"><img src="https://avatars.githubusercontent.com/u/90213568?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Siddhi</b></sub></a><br /><a href="https://github.com/Bauddhik-Geeks/Simon-Game/commits?author=siddhiiguptaa" title="Code">💻</a></td>
   </tr>
 </table>
 
