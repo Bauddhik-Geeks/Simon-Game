@@ -8,19 +8,20 @@
     <title>Simon_Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="assets/product-screenshot.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-
+<body class="animation-area">
+    
     <div id="content">
         <h1>Simon Squared Memory Game</h1>
         <h5 id="level-title">Press A Key to Start</h5>
         <h5 id="turn-indicator"></h5>
         <div class="container">
             <div class="row">
-
+                
                 <div type="button" id="green" class="btn green"></div>
                 <div type="button" id="red" class="btn red"></div>
             </div>
@@ -31,6 +32,18 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <ul class="box-area">
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+        </ul>
+    </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js" charset="utf-8"></script>
 </body>
