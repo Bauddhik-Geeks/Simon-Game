@@ -4,20 +4,27 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var level = 0;
 var started = false;
+var playerTurn = false;
 let score = 0;
+let highScore = loadHighScore();
+
+showHighScore();
 
 $(document).keypress(function() {
 
     if (!started) {
-        level--; // fixes level display on game start //
-        toggleTurn(false);
-        $("#level-title").text("Level " + level);
-        nextSequence();
         started = true;
+        score = 0;
+        level = 0;
+        nextSequence();
     }
 });
 
 $(".btn").click(function() {
+
+    if (!started || !playerTurn) {
+        return;
+    }
 
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
@@ -26,26 +33,34 @@ $(".btn").click(function() {
     animatePress(userChosenColour);
 
     checkAnswer(userClickedPattern.length - 1);
-    toggleTurn(false);
 });
-
-
 
 function checkAnswer(currentLevel) {
 
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
         if (userClickedPattern.length === gamePattern.length) {
+            playerTurn = false;
+            score = level;
             setTimeout(function() {
                 nextSequence();
             }, 1000);
         }
-        score = score + 1;
     } else {
         playSound("wrong");
         $("body").addClass("game-over");
 
-        $("#level-title").text(`Your Score : ${score} (Press Any Key To Restart)`)
-        score = 0;
+        var isNewHighScore = score > highScore;
+        if (isNewHighScore) {
+            highScore = score;
+            saveHighScore(highScore);
+            showHighScore();
+        }
+        var message = `Your Score : ${score}`;
+        if (isNewHighScore) {
+            message += " (New High Score!)";
+        }
+        $("#level-title").text(message + " (Press Any Key To Restart)");
+
         setTimeout(function() {
             $("body").removeClass("game-over");
         }, 200);
@@ -54,18 +69,37 @@ function checkAnswer(currentLevel) {
     }
 }
 
-
 function nextSequence() {
     userClickedPattern = [];
+    playerTurn = false;
     level++;
     $("#level-title").text("Level " + level);
-    var randomNumber = Math.floor(Math.random() * 4);
-    var randomChosenColour = buttonColours[randomNumber];
-    gamePattern.push(randomChosenColour);
+    toggleTurn(false);
 
-    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
-    toggleTurn()
+    var randomNumber = Math.floor(Math.random() * 4);
+    gamePattern.push(buttonColours[randomNumber]);
+
+    playPattern();
+}
+
+// Replays the whole pattern, then hands the turn to the player.
+function playPattern() {
+    var step = 600;
+    gamePattern.forEach(function(colour, i) {
+        setTimeout(function() {
+            if (!started) {
+                return;
+            }
+            playSound(colour);
+            animatePress(colour);
+        }, 500 + i * step);
+    });
+    setTimeout(function() {
+        if (started) {
+            playerTurn = true;
+            toggleTurn(true);
+        }
+    }, 500 + gamePattern.length * step);
 }
 
 function animatePress(currentColor) {
@@ -82,8 +116,10 @@ function playSound(name) {
 
 function startOver() {
     level = 0;
+    score = 0;
     gamePattern = [];
     started = false;
+    playerTurn = false;
     $('#turn-indicator').hide();
 }
 
@@ -92,5 +128,25 @@ function toggleTurn(player = true) {
     if (player) {
         text = "Your turn";
     }
-    $("#turn-indicator").text(text);
+    $("#turn-indicator").text(text).show();
+}
+
+function loadHighScore() {
+    try {
+        return parseInt(localStorage.getItem("simonHighScore"), 10) || 0;
+    } catch (e) {
+        return 0;
+    }
+}
+
+function saveHighScore(value) {
+    try {
+        localStorage.setItem("simonHighScore", value);
+    } catch (e) {
+        // storage unavailable; high score lasts for this session only
+    }
+}
+
+function showHighScore() {
+    $("#high-score").text("High Score : " + highScore);
 }

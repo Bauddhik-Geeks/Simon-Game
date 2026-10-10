@@ -19,7 +19,7 @@ h1 {
     line-height: 2;
 }
 
-#level-title, #turn-indicator {
+#level-title, #turn-indicator, #high-score {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
     margin-top: 2em;
